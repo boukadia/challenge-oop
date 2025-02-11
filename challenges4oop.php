@@ -59,6 +59,9 @@ Ce projet doit appliquer les concepts d'éncapsulation, d'héritage, d'abstracti
 🚀 **Prêt à coder et à relever le défi ?** 😃
  -->
 <?php
+
+### 1. Classe abstraite : **Personne**
+
 abstract class personne{
     protected $nom;
     protected $age;
@@ -68,7 +71,7 @@ abstract class personne{
     }
     abstract public function sePresenter();
 }
-class lecteur extends personne{
+class lecteurr extends personne{
     public function sePresenter(){
         echo "Je suis $this->nom, un lecteur de $this->age ans.";
     }
@@ -78,6 +81,66 @@ class bibliotique extends personne{
         echo "Je suis $this->nom, un bibliothécaire qui gère la bibliothèque.";
     }
 }
-$personne=new lecteur("ahmed",15);
+$personne=new lecteurr("ahmed",15);
 $personne->sePresenter();
+
+echo "<br>";
+
+### 2. Classe **Lecteur** (Hérite de *Personne*)
+
+class lecteur extends personne{
+    private $max=5;
+    // private $titre;
+private $livresEmpruntes=[];
+public function emprunterLivre($titre){
+    if (count($this->livresEmpruntes)<= $this->max){
+        $this->livresEmpruntes[]=$titre;
+    }
+    else {
+        echo "vous avez atteindre le max";
+    }
+    
+}
+public function getBooks(){
+    foreach($this->livresEmpruntes as $livres){
+        echo "<pre>";
+echo $livres;
+
+    }
+}
+public function retireBook($book){
+    if (count($this->livresEmpruntes)!=0){
+          foreach($this->livresEmpruntes as $livres){
+        if ($book==$livres){
+            unset ($livres);
+        }
+        else{
+            "ce book n'exixte pas";
+        }
+        echo "<pre>";
+echo $livres;
+
+    }
+    }
+    else {
+        echo "aucun book in biblitique";
+    }
+}
+
+    public function sePresenter(){
+        echo "Je suis $this->nom, un lecteur de $this->age ans.";
+    }
+}
+$personne=new lecteur("ahmed",15);
+$personne->emprunterLivre("test01");
+$personne->emprunterLivre("test1");
+$personne->emprunterLivre("test13");
+$personne->emprunterLivre("test13");
+$personne->emprunterLivre("test13");
+$personne->emprunterLivre("test13");
+$personne->emprunterLivre("test13");
+$personne->emprunterLivre("test00");
+$personne->retireBook("test");
+
+
 ?>
