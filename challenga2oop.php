@@ -95,4 +95,49 @@ echo $solde->getSold();
 
 echo "<br>";
 
+### Classes et Méthodes final
+// - Objectif :
+//     Empêcher la surcharge d’une classe ou d’une méthode.
+    
+//     - Exercice
+//         Crée une classe Base avec une méthode final afficherMessage().
+//         Crée une classe Enfant qui essaie de surcharger afficherMessage().
+//         Observe l’erreur.
+//         Ajoute un final class et essaie de l’étendre.
+class Base {
+    final public function afficherMessage(){
+        echo "hello";
+    }
+}
+class enfant extends Base{
+    // public function afficherMessage(){            // can not modifier cette methode parce que est type final;
+    
+
+    // }
+}
+$enfant=new enfant;
+$enfant->afficherMessage();
+
+echo "<br>";
+
+final class Bases {  
+     public function afficherMessage(){
+        echo "hello";
+    }
+}
+
+
+
+class enfantt extends Bases{      // can not extend du class parent  parce que est type final; 
+    public function afficherMessage(){            
+    
+
+    }
+}
+$enfant=new enfantt;
+$enfant->afficherMessage();
+
+echo "<br>";
+
+
 ?>
