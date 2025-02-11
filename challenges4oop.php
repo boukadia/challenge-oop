@@ -89,7 +89,7 @@ echo "<br>";
 ### 2. Classe **Lecteur** (Hérite de *Personne*)
 
 class lecteur extends personne{
-    private $max=5;
+    private $max=10;
     // private $titre;
 private $livresEmpruntes=[];
 public function emprunterLivre($titre){
@@ -115,11 +115,11 @@ public function retireBook($book){
             unset ($livres);
         }
         else{
-            "ce book n'exixte pas";
+            echo "<pre>";
+            echo $livres;
+           
         }
-        echo "<pre>";
-echo $livres;
-
+       
     }
     }
     else {
@@ -140,7 +140,7 @@ $personne->emprunterLivre("test13");
 $personne->emprunterLivre("test13");
 $personne->emprunterLivre("test13");
 $personne->emprunterLivre("test00");
-$personne->retireBook("test");
+$personne->retireBook("test1");
 
 
 ?>
