@@ -128,14 +128,14 @@ final class Bases {
 
 
 
-class enfantt extends Bases{      // can not extend du class parent  parce que est type final; 
-    public function afficherMessage(){            
+// class enfantt extends Bases{      // can not extend du class parent  parce que est type final; 
+//     public function afficherMessage(){            
     
 
-    }
-}
-$enfant=new enfantt;
-$enfant->afficherMessage();
+//     }
+// }
+// $enfant=new enfantt;
+// $enfant->afficherMessage();
 
 echo "<br>";
 
