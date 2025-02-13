@@ -312,8 +312,10 @@ class utilisateurr{
         return $this->email;
     }
     public function setEmail($email){
-        if()
+        if(str_contains($email,"@"))
         return $this->email=$email;
+    else 
+    echo "erreur";
     }
     
     
@@ -330,5 +332,5 @@ class utilisateurr{
         
     }
     $afficheDonnes= new Employee("ahmed","ahmed@",5);
-    $afficheDonnes->afficheDonnes();
+    $afficheDonnes->setEmail("hello");
 echo "<br>";
